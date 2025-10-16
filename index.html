@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JARVIS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="permission-gate" class="gate visible" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+      <div class="gate-card">
+        <h1 id="gate-title">Jarvis</h1>
+        <p>Klik hieronder om de microfoon te activeren. Zeg daarna: <strong>"Jarvis wake up"</strong>.</p>
+        <button id="start-btn" class="primary">Microfoon starten</button>
+        <p class="gate-sub">Tip: Je kunt ook zeggen: <em>"Jarvis word wakker"</em>.</p>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-dot"></div>
+        <span>JARVIS</span>
+      </div>
+      <div class="clock" aria-live="polite" aria-atomic="true">
+        <span id="clock-time">--:--:--</span>
+        <span id="clock-date" class="date">—</span>
+      </div>
+      <div class="status">
+        <div class="status-item">
+          <span class="led" id="led-awake" aria-hidden="true"></span>
+          <span id="status-awake" class="muted">Slaapstand</span>
+        </div>
+        <div class="status-item">
+          <span class="led green" id="led-mic" aria-hidden="true"></span>
+          <span id="status-mic" class="muted">Microfoon uit</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel text-panel" aria-labelledby="text-title">
+        <div class="panel-header">
+          <h2 id="text-title">Tekst</h2>
+          <div class="panel-actions">
+            <button id="clear-text" title="Verberg tekst" class="ghost">Verberg</button>
+          </div>
+        </div>
+        <div id="text-display" class="text-display" aria-live="polite"></div>
+      </section>
+
+      <section class="panel image-panel" aria-labelledby="image-title">
+        <div class="panel-header">
+          <h2 id="image-title">Foto's</h2>
+          <div class="panel-actions">
+            <button id="clear-photos" title="Wis foto's" class="ghost">Wis</button>
+          </div>
+        </div>
+        <div id="photo-grid" class="photo-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel log-panel" aria-labelledby="log-title">
+        <div class="panel-header">
+          <h2 id="log-title">Log</h2>
+          <div class="panel-actions">
+            <button id="clear-log" title="Wis log" class="ghost">Wis</button>
+          </div>
+        </div>
+        <div id="log" class="log" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="hint">Zeg <strong>"Jarvis wake up"</strong> om te starten. Zeg <strong>"Jarvis shut down"</strong> om te stoppen.</div>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
